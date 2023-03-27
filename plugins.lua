@@ -22,7 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
+  -- Override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason
@@ -36,6 +36,11 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
   },
 
   -- Install a plugin
