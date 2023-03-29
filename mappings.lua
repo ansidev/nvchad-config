@@ -38,7 +38,7 @@ M.nvterm = {
 M.telescope = {
   n = {
     -- theme switcher
-    ["<leader>cs"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+    ["<leader>km"] = { "<cmd> Telescope keymaps <CR>", "NeoVim keymaps" },
   }
 }
 
