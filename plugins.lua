@@ -52,6 +52,28 @@ local plugins = {
     end,
   },
 
+  {
+    "tzachar/cmp-tabnine",
+    lazy = false,
+    dependencies = "hrsh7th/nvim-cmp",
+    build = "./install.sh",
+    config = function()
+      require("cmp").setup {
+        sources = {
+          { name = 'cmp_tabnine' },
+        },
+      }
+      require('cmp_tabnine.config').setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = '..',
+        show_prediction_strength = false
+      }
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
