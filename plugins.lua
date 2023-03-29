@@ -74,6 +74,21 @@ local plugins = {
     end,
   },
 
+  {
+    "nathom/filetype.nvim",
+    config = function()
+      require("filetype").setup {
+        overrides = {
+          extensions = {
+            tf = "terraform",
+            tfvars = "terraform",
+            tfstate = "json",
+          },
+        },
+      }
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

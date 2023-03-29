@@ -42,6 +42,17 @@ M.telescope = {
   }
 }
 
+M.terraform = {
+  n = {
+    -- terraform commands
+    ["<leader>ti"] = { ":!terraform init<CR>", "terraform init" },
+    ["<leader>tv"] = { ":!terraform validate<CR>", "terraform validate" },
+    ["<leader>tp"] = { ":!terraform plan<CR>", "terraform plan" },
+    ["<leader>ta"] = { ":!terraform apply<CR>", "terraform apply" },
+    ["<leader>taa"] = { ":!terraform apply --auto-approve<CR>", "terraform apply (with auto approve)" },
+  }
+}
+
 -- more keybinds!
 
 return M
