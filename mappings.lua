@@ -45,11 +45,11 @@ M.telescope = {
 M.terraform = {
   n = {
     -- terraform commands
-    ["<leader>ti"] = { ":!terraform init<CR>", "terraform init" },
-    ["<leader>tv"] = { ":!terraform validate<CR>", "terraform validate" },
-    ["<leader>tp"] = { ":!terraform plan<CR>", "terraform plan" },
-    ["<leader>ta"] = { ":!terraform apply<CR>", "terraform apply" },
-    ["<leader>taa"] = { ":!terraform apply --auto-approve<CR>", "terraform apply (with auto approve)" },
+    ["<leader>ti"] = { ":lua require(\"nvterm.terminal\").send(\"terraform init\", \"horizontal\")<CR>", "terraform init" },
+    ["<leader>tv"] = { ":lua require(\"nvterm.terminal\").send(\"terraform validate\", \"horizontal\")<CR>", "terraform validate" },
+    ["<leader>tp"] = { ":lua require(\"nvterm.terminal\").send(\"terraform plan\", \"horizontal\")<CR>", "terraform plan" },
+    ["<leader>ta"] = { ":lua require(\"nvterm.terminal\").send(\"terraform apply\", \"horizontal\")<CR>", "terraform apply" },
+    ["<leader>taa"] = { ":lua require(\"nvterm.terminal\").send(\"terraform apply --auto-approve\", \"horizontal\")<CR>", "terraform apply (with auto approve)" },
   }
 }
 
