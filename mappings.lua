@@ -53,6 +53,16 @@ M.terraform = {
   }
 }
 
+M.http_client = {
+  n = {
+    -- hurl commands
+    ["<leader>uc"] = { ":lua require(\"nvterm.terminal\").send(\"hurl \" .. vim.fn.expand('%'), \"horizontal\")<CR>", "Run the current hurl file" },
+    ["<leader>ua"] = { ":lua require(\"nvterm.terminal\").send(\"hurl *.hurl\", \"horizontal\")<CR>", "Run all hurl files in the current dir" },
+    ["<leader>ut"] = { ":!hurl --test %<CR>", "Test the current hurl file" },
+    ["<leader>uu"] = { ":!hurl --test *.hurl<CR>", "Test all hurl files in the current dir" },
+  }
+}
+
 -- more keybinds!
 
 return M
