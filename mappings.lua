@@ -69,6 +69,12 @@ M.http_client = {
   }
 }
 
+M.dashboard = {
+  n = {
+    ["<C-p>"] = { "<cmd>Dashboard<CR>", "open dashboard" },
+  },
+}
+
 -- more keybinds!
 
 return M
