@@ -35,6 +35,12 @@ M.nvterm = {
   n = nvtermHotKeys,
 }
 
+M.nvchad = {
+  n = {
+    ["<leader>op"] = { '<cmd>lua require("base46").toggle_transparency()<CR>', "toggle transparency" },
+  },
+}
+
 M.telescope = {
   n = {
     -- theme switcher
