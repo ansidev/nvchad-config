@@ -48,7 +48,6 @@ local plugins = {
     init = function()
       require("core.utils").lazy_load "indent-blankline.nvim"
       vim.opt.termguicolors = true
-      vim.g.indent_blankline_filetype_exclude = { "dashboard-nvim" }
       vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
       vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
       vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
@@ -66,6 +65,7 @@ local plugins = {
         "IndentBlanklineIndent5",
         "IndentBlanklineIndent6",
       }
+      table.insert(options.filetype_exclude, "dashboard")
       return options
     end,
     config = function(_, opts)
