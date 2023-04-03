@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- Override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -80,28 +80,28 @@ local plugins = {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     config = function()
-      require("better_escape").setup()
+      require("better_escape").setup {}
     end,
   },
 
   {
     "tzachar/cmp-tabnine",
-    lazy = false,
+    event = "InsertEnter",
     dependencies = "hrsh7th/nvim-cmp",
     build = "./install.sh",
     config = function()
       require("cmp").setup {
         sources = {
-          { name = 'cmp_tabnine' },
+          { name = "cmp_tabnine" },
         },
       }
-      require('cmp_tabnine.config').setup {
+      require("cmp_tabnine.config").setup {
         max_lines = 1000,
         max_num_results = 20,
         sort = true,
         run_on_every_keystroke = true,
-        snippet_placeholder = '..',
-        show_prediction_strength = false
+        snippet_placeholder = "..",
+        show_prediction_strength = false,
       }
     end,
   },
@@ -144,7 +144,6 @@ local plugins = {
   --   "NvChad/nvim-colorizer.lua",
   --   enabled = false
   -- },
-
 }
 
 return plugins

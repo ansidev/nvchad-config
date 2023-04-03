@@ -44,29 +44,50 @@ M.nvchad = {
 M.telescope = {
   n = {
     -- theme switcher
-    ["<leader>km"] = { "<cmd> Telescope keymaps <CR>", "NeoVim keymaps" },
-  }
+    ["<leader>km"] = { "<cmd>Telescope keymaps<CR>", "nvim keymaps" },
+  },
 }
 
 M.terraform = {
   n = {
     -- terraform commands
-    ["<leader>ti"] = { ":lua require(\"nvterm.terminal\").send(\"terraform init\", \"horizontal\")<CR>", "terraform init" },
-    ["<leader>tv"] = { ":lua require(\"nvterm.terminal\").send(\"terraform validate\", \"horizontal\")<CR>", "terraform validate" },
-    ["<leader>tp"] = { ":lua require(\"nvterm.terminal\").send(\"terraform plan\", \"horizontal\")<CR>", "terraform plan" },
-    ["<leader>ta"] = { ":lua require(\"nvterm.terminal\").send(\"terraform apply\", \"horizontal\")<CR>", "terraform apply" },
-    ["<leader>taa"] = { ":lua require(\"nvterm.terminal\").send(\"terraform apply --auto-approve\", \"horizontal\")<CR>", "terraform apply (with auto approve)" },
-  }
+    ["<leader>ti"] = {
+      '<cmd>lua require("nvterm.terminal").send("terraform init", "horizontal")<CR>',
+      "terraform init",
+    },
+    ["<leader>tv"] = {
+      '<cmd>lua require("nvterm.terminal").send("terraform validate", "horizontal")<CR>',
+      "terraform validate",
+    },
+    ["<leader>tp"] = {
+      '<cmd>lua require("nvterm.terminal").send("terraform plan", "horizontal")<CR>',
+      "terraform plan",
+    },
+    ["<leader>ta"] = {
+      '<cmd>lua require("nvterm.terminal").send("terraform apply", "horizontal")<CR>',
+      "terraform apply",
+    },
+    ["<leader>taa"] = {
+      '<cmd>lua require("nvterm.terminal").send("terraform apply --auto-approve", "horizontal")<CR>',
+      "terraform apply (with auto approve)",
+    },
+  },
 }
 
 M.http_client = {
   n = {
     -- hurl commands
-    ["<leader>uc"] = { ":lua require(\"nvterm.terminal\").send(\"hurl \" .. vim.fn.expand('%'), \"horizontal\")<CR>", "Run the current hurl file" },
-    ["<leader>ua"] = { ":lua require(\"nvterm.terminal\").send(\"hurl *.hurl\", \"horizontal\")<CR>", "Run all hurl files in the current dir" },
-    ["<leader>ut"] = { ":!hurl --test %<CR>", "Test the current hurl file" },
-    ["<leader>uu"] = { ":!hurl --test *.hurl<CR>", "Test all hurl files in the current dir" },
-  }
+    ["<leader>uc"] = {
+      '<cmd>lua require("nvterm.terminal").send("hurl " .. vim.fn.expand(\'%\'), "horizontal")<CR>',
+      "Run the current hurl file",
+    },
+    ["<leader>ua"] = {
+      '<cmd>lua require("nvterm.terminal").send("hurl *.hurl", "horizontal")<CR>',
+      "Run all hurl files in the current dir",
+    },
+    ["<leader>ut"] = { "<cmd>!hurl --test %<CR>", "Test the current hurl file" },
+    ["<leader>uu"] = { "<cmd>!hurl --test *.hurl<CR>", "Test all hurl files in the current dir" },
+  },
 }
 
 M.dashboard = {

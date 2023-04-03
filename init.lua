@@ -11,19 +11,19 @@ autocmd("BufWritePre", {
 autocmd("BufRead,BufNewFile", {
   pattern = "*.",
   command = "set filetype=hcl",
- })
+})
 autocmd("BufRead,BufNewFile", {
   pattern = ".terraformrc,terraform.",
   command = "set filetype=hcl",
- })
+})
 autocmd("BufRead,BufNewFile", {
   pattern = "*.tf,*.tfvars",
   command = "set filetype=terraform",
- })
+})
 autocmd("BufRead,BufNewFile", {
   pattern = "*.tfstate,*.tfstate.backup",
   command = "set filetype=json",
- })
+})
 
 -- show invisible characters
 opt.list = true
