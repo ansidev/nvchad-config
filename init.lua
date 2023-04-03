@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local opt = vim.opt
 
 -- auto format file on saving
 autocmd("BufWritePre", {
@@ -23,6 +24,10 @@ autocmd("BufRead,BufNewFile", {
   pattern = "*.tfstate,*.tfstate.backup",
   command = "set filetype=json",
  })
+
+-- show invisible characters
+opt.list = true
+opt.listchars = "eol:↵,tab:→ ,trail:~,extends:>,precedes:<,space:·"
 
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
