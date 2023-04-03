@@ -117,6 +117,14 @@ local plugins = {
     end,
   },
 
+  {
+    "aspeddro/gitui.nvim",
+    event = "VimEnter",
+    config = function()
+      require("gitui").setup {}
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
