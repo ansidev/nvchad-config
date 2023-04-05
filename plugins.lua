@@ -129,10 +129,22 @@ local plugins = {
   {
     "glepnir/dashboard-nvim",
     event = "VimEnter",
-    config = function()
-      require("dashboard").setup {
-        -- config
+    opts = function()
+      return {
+        config = {
+          header = {
+            "░█████╗░███╗░░██╗░██████╗██╗██████╗░███████╗██╗░░░██╗",
+            "██╔══██╗████╗░██║██╔════╝██║██╔══██╗██╔════╝██║░░░██║",
+            "███████║██╔██╗██║╚█████╗░██║██║░░██║█████╗░░╚██╗░██╔╝",
+            "██╔══██║██║╚████║░╚═══██╗██║██║░░██║██╔══╝░░░╚████╔╝░",
+            "██║░░██║██║░╚███║██████╔╝██║██████╔╝███████╗░░╚██╔╝░░",
+            "╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░╚═╝╚═════╝░╚══════╝░░░╚═╝░░░",
+          }
+        }
       }
+    end,
+    config = function(_, opts)
+      require("dashboard").setup(opts)
     end,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
