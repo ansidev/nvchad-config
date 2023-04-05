@@ -96,6 +96,11 @@ M.dashboard = {
   },
 }
 
+M.nvim = {
+  n = {
+    ["<leader>ac"] = { "<cmd>%y+<CR>", "copy file content to clipboard" },
+  },
+}
 -- more keybinds!
 
 return M
